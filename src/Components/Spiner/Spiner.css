@@ -80,10 +80,5 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  word-wrap: break-word;
-  background-color: #303030;
-  background-clip: border-box;
-  border: 1px solid rgba(0,0,0,0.125);
-  border-radius: 0.25rem;
-  margin-bottom: 10px;
+
 }

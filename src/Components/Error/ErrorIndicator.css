@@ -1,0 +1,16 @@
+.error-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  color: coral
+}
+
+.error-indicator .boom {
+  font-size: 32px;
+}
+
+.error-indicator img {
+  width: 200px;
+  border-radius: 20px;
+}
