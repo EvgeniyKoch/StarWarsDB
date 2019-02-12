@@ -24,14 +24,14 @@ export default class ItemList extends Component {
   renderItems(arr) {
     return arr.map(({ id, name }) => {
       return(
-        <li 
+        <li
           className="list-group-item"
           key={id}
           onClick={() => this.props.onItemSelected(id)}>
           {name}
         </li>
       )
-    })
+    });
   }
 
   render() {
