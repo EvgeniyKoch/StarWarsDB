@@ -1,6 +1,7 @@
 .random-planet {
   display: flex;
   padding: 1rem;
+  overflow: auto;
 }
 
 .random-planet .planet-image {
@@ -20,4 +21,17 @@
 
 .random-planet .list-group-item .term {
   margin-right: .5rem;
+}
+
+@media screen and (max-width:380px) {
+  .random-planet {
+    padding: .5rem;
+    overflow: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .random-planet .planet-image  {
+    margin-right: 0;
+  }
 }

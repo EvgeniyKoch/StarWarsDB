@@ -3,35 +3,23 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import RandomPlanet from '../RandomPlanet//RandomPlanet';
 import PeoplePage from '../PeoplePage/PeoplePage';
-import ErrorIndicator from '../Error/ErrorIndicator';
-
+import ErrorBoundry from '../ErrorBoundry/ErrorBoundry';
+import SwapiService from '../../Services/services';
+import ItemList from '../ItemList/ItemList';
+import ItemDetails from '../ItemDetails/ItemDetails';
 import './App';
 
 
 export default class App extends Component {
 
-  state = {
-    hasError: false
-  }
-
-  componentDidCatch() {
-    this.setState({
-      hasError: true
-    })
-  }
+  swapiService = new SwapiService();
 
   render() {
-
-    if (this.state.hasError) {
-      return <ErrorIndicator />
-    }
 
     return (
       <div className="container">
         <Header />
         <RandomPlanet />
-        <PeoplePage />
-        <PeoplePage />
         <PeoplePage />
       </div>
     )

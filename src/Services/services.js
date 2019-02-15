@@ -2,45 +2,45 @@ export default class SwapiService {
 
   _apiBase = 'https://swapi.co/api';
 
-  async getResurse(url) {
+  getResurse = async (url) => {
     const res = await fetch(`${this._apiBase}${url}`);
     if (!res.ok) {
       throw new Error (`Could not fetch ${this._apiBase}${url}, is status ${res.status}`)
     }
     return await res.json();
-  }
+  };
   
-  async getAllPeople() {
+  getAllPeople = async () => {
     const res = await this.getResurse(`/people/`);
     return res.results.map(this._transformPerson);
-  }
+  };
 
-  async getPerson(id) {
+  getPerson = async (id) => {
     const person = await this.getResurse(`/people/${id}/`);
     return this._transformPerson(person);
-  }
+  };
 
-  async getAllPlanets() {
+  getAllPlanets = async () => {
     const res = await this.getResurse(`/planets/`);
     return res.results.map(this._transformPlanet);
-  }
+  };
 
-  async getPlanet(id) {
+  getPlanet = async (id) => {
     const planet = await this.getResurse(`/planets/${id}/`);
     return this._transformPlanet(planet);
-  }
+  };
 
-  async getAllStarShips() {
+  getAllStarShips = async () => {
     const res = await this.getResurse(`/starships/`);
     return res.results.map(this._transformStarShip);
-  }
+  };
   
-  async getStarShip(id) {
+  getStarShip = async (id) => {
     const starship = await this.getResurse(`/starships/${id}`);
     return this._transformStarShip(starship);
-  }
+  };
 
-  _extractId(item) {
+  _extractId = (item) => {
     const idRegExp = /\/([0-9]*)\/$/;
     return item.url.match(idRegExp)[1];
   }
@@ -75,8 +75,10 @@ export default class SwapiService {
       id: this._extractId(person),
       name: person.name,
       gender: person.gender,
-      birthYear: person.birthYear,
-      eyeColor: person.eyeColor
+      birthYear: person.birth_year,
+      eyeColor: person.eye_color,
+      height: person.height,
+      mass: person.mass
     }
   }
 }

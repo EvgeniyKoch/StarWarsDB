@@ -1,0 +1,43 @@
+.person-details {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+}
+
+@media screen and (max-width:991px) {
+  .person-details  {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width:768px) {
+  .person-details {
+    display: flex;
+    flex-direction: row;
+    padding: .5rem;
+  }
+}
+
+@media screen and (max-width:480px) {
+  .person-details  {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+.person-details .person-image {
+  width: 50%;
+  height: 30%;
+  border-radius: 10px;
+}
+
+.person-details .list-group-item {
+  padding: .25rem;
+}
+
+.person-details .list-group-item .term{
+  margin-right: .5rem;
+}

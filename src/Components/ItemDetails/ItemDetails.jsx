@@ -2,48 +2,47 @@ import React, { Component } from 'react';
 import SwapiService from '../../Services/services';
 import Spiner from '../Spiner/Spiner';
 
-import './PersonDetails.css';
+import './ItemDetails.css';
 
-export default class PersonDetails extends Component {
+export default class ItemDetails extends Component {
 
   swapiService = new SwapiService();
 
   state = {
-    person: null,
+    item: null,
     loading: true
   }
   
   componentDidMount() {
-    this.updatePerson();
+    this.updateItem();
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.personId !== prevProps.personId) {
-      this.updatePerson();
+    if (this.props.itemId !== prevProps.itemId) {
+      this.updateItem();
     }
   }
 
-  updatePerson() {
-    const { personId } = this.props;
+  updateItem() {
+    const { itemId } = this.props;
   
-    if (!personId) {
+    if (!itemId) {
       return;
     }
 
     this.swapiService
-      .getPerson(personId)
-      .then((person) => {
-        this.setState({
-          person,
-          loading: false
-        })
+      .getPerson(itemId)
+      .then((item) => {
+        this.setState({ 
+          item,
+          loading: false 
       })
-      .catch();
+      })
   }
 
   render() {
 
-    if (!this.state.person) {
+    if (!this.state.item) {
       return <p style={
           {
             color:'coral',
@@ -53,9 +52,9 @@ export default class PersonDetails extends Component {
         }>Select a person from a list!</p>
     }
 
-    const { person, loading } = this.state;
+    const { item, loading } = this.state;
     const spinner = loading ? <Spiner /> : null;
-    const content = !loading ? < PersonItem person={person} /> : null;
+    const content = !loading ? < PersonItem item={item} /> : null;
 
     return (
       <div className="person-details card">
@@ -66,9 +65,9 @@ export default class PersonDetails extends Component {
   }
 }
 
-const PersonItem = ({ person }) => {
-
-  const { id, name, gender, birthYear, eyeColor } = person;
+const PersonItem = ({ item }) => {
+  const { id, name, gender, birthYear, 
+          eyeColor, height, mass } = item;
 
   return (
     <>
@@ -78,16 +77,24 @@ const PersonItem = ({ person }) => {
           <h4>{name}</h4>
           <ul className="list-group list-group-flush">
             <li className="list-group-item">
-              <span className="term">Gender</span>
+              <span className="term">Gender:</span>
               <span>{gender}</span>
             </li>
             <li className="list-group-item">
-              <span className="term">Birth Year</span>
+              <span className="term">Birth Year:</span>
               <span>{birthYear}</span>
             </li>
             <li className="list-group-item">
-              <span className="term">Eye Color</span>
+              <span className="term">Eye Color:</span>
               <span>{eyeColor}</span>
+            </li>
+            <li className="list-group-item">
+              <span className="term">Height:</span>
+              <span>{height}</span>
+            </li>
+            <li className="list-group-item">
+              <span className="term">Mass:</span>
+              <span>{mass}</span>
             </li>
           </ul>
         </div>

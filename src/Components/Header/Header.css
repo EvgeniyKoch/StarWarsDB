@@ -19,9 +19,22 @@
 }
 
 .header h3 a {
-  color: white;
+  color: #e34510;
 }
 
 .header h3 a:hover {
   color: #00bc8c;
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    margin-top: .5rem;
+    padding-left: 10px;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .header ul {
+    padding: 0;
+  }
 }

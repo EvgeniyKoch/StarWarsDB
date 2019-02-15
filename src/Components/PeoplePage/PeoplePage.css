@@ -1,9 +1,9 @@
 .mb2  {
   margin-bottom: 20px;
-  height: 189px;
-  overflow: hidden;
 }
 
-.mb2 .col-md-6 {
-  overflow: auto;
+@media screen and (max-width:769px) {
+  .mb2 {
+    flex-direction: column-reverse ;
+  }
 }
