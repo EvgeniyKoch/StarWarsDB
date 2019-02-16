@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
+
 import SwapiService from '../../Services/services';
-import Spiner from '../Spiner/Spiner';
 
 import './ItemDetails.css';
+
+const Record = ({ item, field, label }) => {
+  console.log(item.name)
+  return (
+    <li className="list-group-item">
+      <span className="term">{label}</span>
+      <span>{item[field]}</span>
+    </li>
+  )
+};
+
+export { Record };
 
 export default class ItemDetails extends Component {
 
@@ -10,7 +22,7 @@ export default class ItemDetails extends Component {
 
   state = {
     item: null,
-    loading: true
+    image: null
   }
   
   componentDidMount() {
@@ -24,19 +36,16 @@ export default class ItemDetails extends Component {
   }
 
   updateItem() {
-    const { itemId } = this.props;
-  
-    if (!itemId) {
-      return;
-    }
+    const { itemId, getData, getImageUrl } = this.props;
 
-    this.swapiService
-      .getPerson(itemId)
+    if (!itemId) return;
+
+    getData(itemId)
       .then((item) => {
         this.setState({ 
           item,
-          loading: false 
-      })
+          image: getImageUrl(item)
+        })
       })
   }
 
@@ -49,55 +58,28 @@ export default class ItemDetails extends Component {
             fontSize: '28px',
             textAlign: 'center'
           }
-        }>Select a person from a list!</p>
-    }
-
-    const { item, loading } = this.state;
-    const spinner = loading ? <Spiner /> : null;
-    const content = !loading ? < PersonItem item={item} /> : null;
+        }>Select a person from a list!</p>;
+    };
+ 
+    const { item, image } = this.state;
+    const { name } = item;
 
     return (
       <div className="person-details card">
-        {spinner}
-        {content}
+        <img className="person-image" src={image} alt={item}/>
+        <div className="card-body">
+          <h4>{name}</h4>
+          <ul className="list-group list-group-flush">
+            {
+              React.Children.map(this.props.children, (child) => {
+                return React.cloneElement(child, { item })
+              })
+            }
+          </ul>
+        </div>
       </div>
     )
   }
 }
 
-const PersonItem = ({ item }) => {
-  const { id, name, gender, birthYear, 
-          eyeColor, height, mass } = item;
 
-  return (
-    <>
-      <img className="person-image"
-          src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} />
-        <div className="card-body">
-          <h4>{name}</h4>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">
-              <span className="term">Gender:</span>
-              <span>{gender}</span>
-            </li>
-            <li className="list-group-item">
-              <span className="term">Birth Year:</span>
-              <span>{birthYear}</span>
-            </li>
-            <li className="list-group-item">
-              <span className="term">Eye Color:</span>
-              <span>{eyeColor}</span>
-            </li>
-            <li className="list-group-item">
-              <span className="term">Height:</span>
-              <span>{height}</span>
-            </li>
-            <li className="list-group-item">
-              <span className="term">Mass:</span>
-              <span>{mass}</span>
-            </li>
-          </ul>
-        </div>
-    </>
-  )
-}
