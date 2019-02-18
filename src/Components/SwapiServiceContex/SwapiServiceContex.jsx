@@ -2,7 +2,7 @@ import React from 'react';
 
 const {
   Provider: SwapiServiceProvider,
-  Counsumer: SwapiServiceConsumer
+  Consumer: SwapiServiceConsumer
 } = React.createContext();
 
 export {

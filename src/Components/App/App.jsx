@@ -19,8 +19,9 @@ import './App';
 export default class App extends Component {
 
   swapiService = new SwapiService();
-
+  
   render() {
+    
     return (
       <ErrorBoundry>
         <SwapiServiceProvider value={this.swapiService}>

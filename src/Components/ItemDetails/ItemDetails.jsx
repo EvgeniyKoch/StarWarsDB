@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 
-import SwapiService from '../../Services/services';
-
 import './ItemDetails.css';
 
 const Record = ({ item, field, label }) => {
-  console.log(item.name)
   return (
     <li className="list-group-item">
       <span className="term">{label}</span>
@@ -17,8 +14,6 @@ const Record = ({ item, field, label }) => {
 export { Record };
 
 export default class ItemDetails extends Component {
-
-  swapiService = new SwapiService();
 
   state = {
     item: null,
