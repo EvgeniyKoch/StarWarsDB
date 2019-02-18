@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
 import Spiner from '../Spiner/Spiner';
-// import ErrorIndicaroe from '../Error/ErrorIndicator';
 
-const withData = (View, getData) => {
+const withData = (View) => {
   return class extends Component {
     
     state = {
@@ -11,7 +10,8 @@ const withData = (View, getData) => {
     }
   
     componentDidMount() {
-      getData()
+      console.log(this.props.getData)
+      this.props.getData()
         .then((data) => {
           this.setState( { data })
         });
