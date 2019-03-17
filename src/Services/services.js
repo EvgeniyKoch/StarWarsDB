@@ -80,7 +80,7 @@ export default class SwapiService {
       crew: starship.crew,
       passengers: starship.passengers,
       cargoCapacity: starship.cargoCapacity
-    }
+    };
   }
 
   _transformPerson = (person) => {
@@ -92,6 +92,6 @@ export default class SwapiService {
       eyeColor: person.eye_color,
       height: person.height,
       mass: person.mass
-    }
+    };
   }
 }

@@ -9,9 +9,11 @@ const SecretPage = ({ isLoggedIn }) => {
       <div className="jumbotron text-center">
         <div className="flexis">
           <iframe
-             src="https://www.youtube.com/embed/WMjkfBzGE2c"
-             frameborder="0"
-             allowfullscreen>
+            title="secret video"
+            src="https://www.youtube.com/embed/WMjkfBzGE2c"
+            frameborder="0"
+            allowfullscreen
+          >
           </iframe>
         </div> 
       </div>
@@ -21,9 +23,3 @@ const SecretPage = ({ isLoggedIn }) => {
 };
 
 export default SecretPage;
-// < iframe width = "560"
-// height = "315"
-// src = "https://www.youtube.com/embed/WMjkfBzGE2c"
-// frameborder = "0"
-// allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-// allowfullscreen > < /iframe>
