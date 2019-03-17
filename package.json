@@ -1,12 +1,14 @@
 {
   "name": "starwars",
-  "homepage": "https://evgeniykoch.github.io/StarWarsDB" ,
+  "homepage": "https://evgeniykoch.github.io/StarWarsDB",
   "version": "0.3.0",
   "private": true,
   "dependencies": {
     "gh-pages": "^2.0.1",
+    "prop-types": "^15.7.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-router-dom": "^4.4.0",
     "react-scripts": "2.1.3"
   },
   "scripts": {

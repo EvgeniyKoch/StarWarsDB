@@ -1,18 +1,10 @@
 import React from 'react';
 
-import ItemList from '../ItemList/ItemList';
+import ItemList from '../ItemList';
 import withData from '../hoc-helpers/withData';
 import withSwapiService from '../hoc-helpers/with-swapi-service';
-
-const withChildrenFunction = (Wrapped, func) => {
-  return (props) => {
-    return (
-      <Wrapped {...props}>
-        {func}
-      </Wrapped>
-    )
-  };
-};
+import withChildrenFunction from '../hoc-helpers/with-children-function';
+import compose from '../hoc-helpers/compose';
 
 const mapPersonMethodsToProps = (swapiSercice) => {
   return {
@@ -36,23 +28,26 @@ const renderName = ({ name }) => <span>{name}</span>;
 
 const renderModelAndName = ({ name, model }) => <span>{name} ({model})}</span>;
 
-const PersonList = withSwapiService(
-                      withData(
-                        withChildrenFunction(ItemList, renderName)),
-                        mapPersonMethodsToProps);
+const PersonList = compose(
+                      withSwapiService(mapPersonMethodsToProps),
+                      withData,
+                      withChildrenFunction(renderName)
+                    )(ItemList);
 
-const PlanetList = withSwapiService(
-                      withData(
-                        withChildrenFunction(ItemList, renderName)),
-                        mapPlanetMethodsToProps);
+const PlanetList = compose(
+                      withSwapiService(mapPlanetMethodsToProps),
+                      withData,
+                      withChildrenFunction(renderName)
+                    )(ItemList);
 
-const StarshipList = withSwapiService(
-                      withData(
-                        withChildrenFunction(ItemList, renderModelAndName)),
-                        mapStarshipsMethodsToProps);
+const StarshipList = compose(
+                        withSwapiService(mapStarshipsMethodsToProps),
+                        withData,
+                        withChildrenFunction(renderModelAndName)
+                      )(ItemList);
 
 export {
   PersonList,
   PlanetList,
-  StarshipList
+  StarshipList,
 };

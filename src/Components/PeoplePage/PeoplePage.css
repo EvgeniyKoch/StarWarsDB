@@ -1,9 +1,0 @@
-.mb2  {
-  margin-bottom: 20px;
-}
-
-@media screen and (max-width:769px) {
-  .mb2 {
-    flex-direction: column-reverse ;
-  }
-}
