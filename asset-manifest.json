@@ -1,14 +1,14 @@
 {
-  "main.css": "/StarWarsDB/static/css/main.5928b37c.chunk.css",
-  "main.js": "/StarWarsDB/static/js/main.a5975bb1.chunk.js",
-  "main.js.map": "/StarWarsDB/static/js/main.a5975bb1.chunk.js.map",
+  "main.css": "/StarWarsDB/static/css/main.4481eef8.chunk.css",
+  "main.js": "/StarWarsDB/static/js/main.b72aaae9.chunk.js",
+  "main.js.map": "/StarWarsDB/static/js/main.b72aaae9.chunk.js.map",
   "static/js/1.f1f39e12.chunk.js": "/StarWarsDB/static/js/1.f1f39e12.chunk.js",
   "static/js/1.f1f39e12.chunk.js.map": "/StarWarsDB/static/js/1.f1f39e12.chunk.js.map",
   "runtime~main.js": "/StarWarsDB/static/js/runtime~main.f9d155c1.js",
   "runtime~main.js.map": "/StarWarsDB/static/js/runtime~main.f9d155c1.js.map",
   "static/media/star-error.jpeg": "/StarWarsDB/static/media/star-error.c29184be.jpeg",
-  "static/css/main.5928b37c.chunk.css.map": "/StarWarsDB/static/css/main.5928b37c.chunk.css.map",
+  "static/css/main.4481eef8.chunk.css.map": "/StarWarsDB/static/css/main.4481eef8.chunk.css.map",
   "index.html": "/StarWarsDB/index.html",
-  "precache-manifest.9130672a06c6918c3aa85581d634df20.js": "/StarWarsDB/precache-manifest.9130672a06c6918c3aa85581d634df20.js",
+  "precache-manifest.55cd1cbd3643fe673631e909f8b3c0ca.js": "/StarWarsDB/precache-manifest.55cd1cbd3643fe673631e909f8b3c0ca.js",
   "service-worker.js": "/StarWarsDB/service-worker.js"
 }

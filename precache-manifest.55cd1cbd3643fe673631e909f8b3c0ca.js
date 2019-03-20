@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/StarWarsDB/static/js/runtime~main.f9d155c1.js"
   },
   {
-    "revision": "a5975bb104a4e028affc",
-    "url": "/StarWarsDB/static/js/main.a5975bb1.chunk.js"
+    "revision": "b72aaae9bbe68800e969",
+    "url": "/StarWarsDB/static/js/main.b72aaae9.chunk.js"
   },
   {
     "revision": "f1f39e122fb0f17c3550",
     "url": "/StarWarsDB/static/js/1.f1f39e12.chunk.js"
   },
   {
-    "revision": "a5975bb104a4e028affc",
-    "url": "/StarWarsDB/static/css/main.5928b37c.chunk.css"
+    "revision": "b72aaae9bbe68800e969",
+    "url": "/StarWarsDB/static/css/main.4481eef8.chunk.css"
   },
   {
-    "revision": "026afbd91b659ebe74c7c65ac463c820",
+    "revision": "7cb650fb025e5f952b3685e5ddc236f9",
     "url": "/StarWarsDB/index.html"
   }
 ];
