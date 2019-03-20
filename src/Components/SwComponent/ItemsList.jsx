@@ -6,21 +6,21 @@ import withSwapiService from '../hoc-helpers/with-swapi-service';
 import withChildrenFunction from '../hoc-helpers/with-children-function';
 import compose from '../hoc-helpers/compose';
 
-const mapPersonMethodsToProps = (swapiSercice) => {
+const mapPersonMethodsToProps = (swapiService) => {
   return {
-    getData: swapiSercice.getAllPeople
+    getData: swapiService.getAllPeople
   }
 };
 
-const mapStarshipsMethodsToProps = (swapiSercice) => {
+const mapStarshipsMethodsToProps = (swapiService) => {
   return {
-    getData: swapiSercice.getAllStarShips
+    getData: swapiService.getAllStarShips
   }
 };
 
-const mapPlanetMethodsToProps = (swapiSercice) => {
+const mapPlanetMethodsToProps = (swapiService) => {
   return {
-    getData: swapiSercice.getAllPlanets
+    getData: swapiService.getAllPlanets
   }
 };
 
